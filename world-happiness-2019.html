@@ -1,0 +1,69 @@
+<!-- Code from d3-graph-gallery.com -->
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h2 class="display-4">World Happiness Report 2019</h2>
+    <svg id="my_dataviz" width="960" height="600"></svg>
+
+    <div id="detail"></div>
+
+    <div id="sort-buttons">
+        <h3 class="lead" id="sub-title">What defines happiness according to the Gallup World Poll?</h3>
+        <form class="form-inline">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">🔍</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Country" aria-label="country-search" aria-describedby="basic-addon1" id="countrySearch" onkeyup="searchCountry()">
+                <!-- <button class="btn btn-light btn-sm" onClick="searchCountry()"> Search</button> -->
+            </div>
+        </form>
+        <div id="allbutton">
+            <button type="button" class="btn btn-outline-warning" id="gdp-button" onClick="displayLegend(gdp.id)">GDP</button>
+            <button type="button" class="btn btn-outline-warning" id="social-button" onClick="displayLegend(social.id)">Social Support</button>
+            <button type="button" class="btn btn-outline-warning" id="healthy-button" onClick="displayLegend(life.id)">Healthy Life Expectancy</button>
+            <button type="button" class="btn btn-outline-warning" id="freedom-button" onClick="displayLegend(freedom.id)">Freedom</button>
+            <button type="button" class="btn btn-outline-warning" id="gen-button" onClick="displayLegend(generosity.id)">Generosity</button>
+            <button type="button" class="btn btn-outline-warning" id="corr-button" onClick="displayLegend(corruption.id)">Perceptions of Corruption</button>
+            <button type="button" type="button" class="btn btn-light" id="reset-button" onClick="reset()">reset</button>
+        </div>
+    </div>
+
+    <p id="gdp" class="lead"><strong>GDP</strong> per capita is in terms of Purchasing Power Parity (PPP) adjusted to constant 2011 international dollars, taken from the World Development Indicators (WDI) released by the World Bank on November 14, 2018.</p>
+    <p id="life" class="lead">The time series of <strong>healthy life expectancy</strong> at birth are constructed based on data from the World Health Organization (WHO) Global Health Observatory data repository, with data available for 2005, 2010, 2015, and 2016.</p>
+    <p id="social" class="lead"><strong> Social support </strong>is the national average of the binary responses (either 0 or 1) to the Gallup World Poll (GWP) question “If you were in trouble, do you have relatives or friends you can count on to help you whenever you need them,
+        or not?</p>
+    <p id="freedom" class="lead"><strong>Freedom </strong>to make life choices is the national average of binary responses to the GWP question “Are you satisfied or dissatisfied with your freedom to choose what you do with your life?</p>
+    <p id="generosity" class="lead"><strong>Generosity</strong> is the residual of regressing the national average of GWP responses to the question “Have you donated money to a charity in the past month?” on GDP per capita.</p>
+    <p id="corruption" class="lead"><strong>Perceptions of corruption </strong>are the average of binary answers to two GWP questions: “Is corruption widespread throughout the government or not?” and “Is corruption widespread within businesses or not?” Where data for government corruption
+        are missing, the perception of business corruption is used as the overall corruption-perception measure.</p>
+
+    <div id="flower-chart"></div>
+    <div id="source">
+        <div>More information available on:</div>
+    </div>
+
+    <script src="vis.js"></script>
+</body>
+
+</html>

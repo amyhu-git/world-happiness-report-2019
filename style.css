@@ -1,0 +1,115 @@
+h2 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#sub-title {
+    text-align: center;
+    font-size: 30px;
+    font-style: italic
+}
+
+.countries {
+    fill: none;
+    stroke: 'transparent';
+    stroke-linejoin: round;
+}
+
+.caption {
+    fill: #000;
+    text-anchor: start;
+    font-weight: bold;
+}
+
+#legend {
+    text-align: left;
+    margin-left: 20px;
+    display: block;
+}
+
+#my_dataviz {
+    display: block;
+    margin: auto
+}
+
+#flower-chart {
+    width: fit-content;
+    /* margin-left: 50px; */
+}
+
+#sort-buttons {
+    margin: auto;
+    text-align: center;
+}
+
+#gdp-button,
+#social-button,
+#healthy-button,
+#freedom-button,
+#gen-button,
+#corr-button {
+    color: #ea8022;
+    border-color: #ea8022;
+    margin-bottom: 20px;
+}
+
+#reset-button {
+    margin-bottom: 20px;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 160px;
+    height: fit-content;
+    padding: 10px;
+    font: 18px sans-serif;
+    background: rgba(226, 224, 224, 0.664);
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+
+/* #allbutton {
+    background-color: #ea8022;
+    opacity: 0.5
+}
+ */
+
+#net-path {
+    fill: none;
+    stroke: #dbae7e73;
+}
+
+form {
+    margin-top: 20px;
+    background-color: lightgray;
+    border-color: #ea8022;
+    opacity: 0.5;
+    margin-bottom: 10px;
+}
+
+#flower-tooltip {
+    position: absolute;
+    text-align: center;
+    width: 160px;
+    height: fit-content;
+    padding: 5px;
+    font: 13px sans-serif;
+    background: rgba(226, 224, 224, 0.664);
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+#source {
+    font-size: small;
+    text-align: center;
+}
+
+
+/* .petal:hover {
+    transform: scale(petalPath *2);
+} */
