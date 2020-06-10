@@ -76,7 +76,7 @@
 
    // Load data and boot
    let promises = [
-       d3.json("//enjalot.github.io/wwsd/data/world/world-110m.geojson"),
+       d3.json("https://enjalot.github.io/wwsd/data/world/world-110m.geojson"),
        d3.csv("data/2019.csv", d => {
            happiness.set(d.Country, +d.Score);
        })
