@@ -1,4 +1,7 @@
 # World Happiness Report 2019
+
+Check in out: https://amyhu-git.github.io/world-happiness-report-2019/
+
 <br>
 The d3.js visualisation is based on the World Happiness Data, freely available at: https://www.kaggle.com/unsdsn/world-happiness#2019.csv. <br>
 The dataset reports the state of happiness in the world across 156 nations collected through the Gallup World Poll. 
